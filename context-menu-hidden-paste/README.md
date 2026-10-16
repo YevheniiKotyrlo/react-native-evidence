@@ -32,7 +32,7 @@ xcodebuild -workspace RNTesterPods.xcworkspace -scheme RNTester -configuration R
 
 **iPad Pro, iPadOS 27.0.1**, through a WebDriverAgent runner. The Playground is opened from RNTester's Playground tab; Cmd+A and Cmd+C are pressed in the first field, then each other field is tapped and Cmd+V pressed in it, in both orders. The chords go through the runner's `keyboardInput`; a chord sent first after a tap did nothing in either field, so a right-arrow key goes ahead of them. WebDriverAgent reads an empty field as its placeholder, so the line under the fields is what each field holds.
 
-With VoiceOver on, each field is touched, then double-tapped to edit it, and the rotor is turned with the runner's rotate gesture, one call per turn, while the screen is recorded; the label the rotor shows after each turn is read off the recording. In the field without the prop, a flick down and a double-tap on the Edit item run its first action.
+With VoiceOver and its Caption Panel on, each field is touched, then double-tapped to edit it, and the rotor is turned with the runner's rotate gesture, one call per turn, clockwise and then counter-clockwise, while the screen is recorded. The rotor's label and the Caption Panel, which shows everything VoiceOver says, are read off the recording. In the field without the prop, flicks down on the Edit item step through its actions, and a double-tap runs one.
 
 **Android 16 emulator** (stock, API 36, 1140 × 2400). [`tools/keyboard-paste.sh`](../tools/keyboard-paste.sh) copies the first field with Ctrl+A and Ctrl+C, then pastes with Ctrl+V into each other field:
 
@@ -49,10 +49,10 @@ tools/keyboard-paste.sh <serial> 570 343 570 520 570 697
 
 On the iPad, while each field is edited:
 
-- **VoiceOver's rotor.** In the field with `contextMenuHidden`, 16 turns cycle Typing mode, Containers, Words, Misspelt Words, Headings, Speaking Rate and Characters twice, with no Edit. In the field without it, Edit comes up every fourth turn, and its first action pastes `123456`.
+- **VoiceOver's rotor.** In the field with `contextMenuHidden`, 16 turns each way pass Typing mode, Headings, Containers, Speaking Rate, Words, Characters and Misspelt Words, and VoiceOver never says Edit. In the field without it, the same turns land on Edit every few turns; its actions are paste and scan text, and paste puts `123456` in the field.
 - **The keyboard's Paste key** is greyed out in the field with `contextMenuHidden` and enabled in the field without it.
 
-The tool output is in [`readings/`](readings).
+The readings are in [`readings/`](readings).
 
 <img src="../images/context-menu-hidden-ipad-cmd-v.png" width="640">
 
@@ -64,4 +64,14 @@ The keyboard's shortcut bar while the field without the prop (top) and the field
 
 <img src="../images/context-menu-hidden-ipad-voiceover-rotor.png" width="700">
 
-The rotor's label after each turn: the field without the prop (top), the field with it (bottom).
+The rotor's label after each clockwise turn: the field without the prop (top), the field with it (bottom).
+
+| The Caption Panel, counter-clockwise: the field with `contextMenuHidden` | the field without it |
+| --- | --- |
+| <img src="../images/context-menu-hidden-ipad-voiceover-captions-with.png" width="350"> | <img src="../images/context-menu-hidden-ipad-voiceover-captions-without.png" width="350"> |
+
+Each caption once, in the order VoiceOver said it; a yellow word is the one being spoken.
+
+<img src="../images/context-menu-hidden-ipad-voiceover-paste.png" width="640">
+
+The field without the prop: the Edit item, its actions a flick down at a time, and the field after a double-tap on paste.

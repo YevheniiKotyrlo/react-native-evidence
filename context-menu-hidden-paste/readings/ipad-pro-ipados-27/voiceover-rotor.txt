@@ -1,6 +1,15 @@
 # react-native main e04aaf62f7, RNTester Release (JS embedded), iPad Pro (iPadOS 27.0.1), VoiceOver on
 # each field touched, then double-tapped to edit it; WebDriverAgent's rotate gesture (0.3 rad) once per turn;
-# the rotor's label read off the screen recorded at 3.5 frames per second
+# the screen recorded at 3.5 frames per second; the rotor's label and VoiceOver's Caption Panel read off the frames
+
+clockwise, the rotor's label after each turn:
 field without contextMenuHidden, 16 turns: Headings, Speaking Rate, Characters, Edit, Headings, Speaking Rate, Characters, Edit, Headings, Speaking Rate, Characters, Edit, Headings, Speaking Rate, Characters, Edit
-then a flick down and a double-tap on the Edit item: readout with the flag: "", without: "123456"
 field with contextMenuHidden, 16 turns: Typing mode, Containers, Words, Misspelt Words, Headings, Speaking Rate, Characters, Typing mode, Containers, Words, Misspelt Words, Headings, Speaking Rate, Characters, Typing mode, Containers
+every lit frame of the field with contextMenuHidden (107): only those seven items
+
+counter-clockwise, everything the Caption Panel showed, in order, each once:
+field without contextMenuHidden, 16 turns: insertion point at end, Misspelt Words, Edit, Typing mode, Headings, Speaking Rate 50%, Characters, Misspelt Words, Edit, Typing mode, Headings, Containers, Speaking Rate 50%, Characters, Edit, Typing mode, Headings
+field with contextMenuHidden, 16 turns: insertion point at end, Typing mode, Headings, Containers, Speaking Rate 50%, Words, Characters, Misspelt Words, Headings, Speaking Rate 50%, Characters, Misspelt Words, Typing mode, Headings, Containers
+
+field without contextMenuHidden, on the Edit item, a flick down at a time: paste, scan text, paste, scan text, paste
+then a double-tap on paste: readout with the flag: "", without: "123456"
