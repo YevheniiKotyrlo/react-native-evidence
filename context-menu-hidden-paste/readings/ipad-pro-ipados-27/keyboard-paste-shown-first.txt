@@ -1,0 +1,5 @@
+# react-native main e04aaf62f7, RNTester Release (JS embedded), iPad Pro (iPadOS 27.0.1), WebDriverAgent hardware keys
+# Cmd+A, Cmd+C in the first field, then a tap and Cmd+V in each field (shown-first); every chord waits 1000 ms after its tap
+before: source="123456" contextMenuHidden="contextMenuHidden" no contextMenuHidden="no contextMenuHidden" | readout: with the flag: "", without: ""
+after Cmd+V in the field without it: source="123456" contextMenuHidden="contextMenuHidden" no contextMenuHidden="123456" | readout: with the flag: "", without: "123456"
+after Cmd+V in the contextMenuHidden field: source="123456" contextMenuHidden="contextMenuHidden" no contextMenuHidden="123456" | readout: with the flag: "", without: "123456"

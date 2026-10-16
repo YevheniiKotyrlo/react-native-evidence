@@ -1,0 +1,5 @@
+# main e04aaf62f7 build ea1ea12a0763, x86_64 RNTester, Android 16 (API 36) emulator, 1140 x 2400
+# copy the first field, paste into the contextMenuHidden field, then into the field without it
+fields before pasting: text="123456" text="contextMenuHidden" text="no contextMenuHidden"
+after Ctrl+V at (570, 520): text="123456" text="123456" text="no contextMenuHidden"
+after Ctrl+V at (570, 697): text="123456" text="123456" text="123456"

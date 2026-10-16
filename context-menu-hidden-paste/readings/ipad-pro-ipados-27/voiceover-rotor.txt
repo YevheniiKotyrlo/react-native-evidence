@@ -1,0 +1,6 @@
+# react-native main e04aaf62f7, RNTester Release (JS embedded), iPad Pro (iPadOS 27.0.1), VoiceOver on
+# each field touched, then double-tapped to edit it; WebDriverAgent's rotate gesture (0.3 rad) once per turn;
+# the rotor's label read off the screen recorded at 3.5 frames per second
+field without contextMenuHidden, 16 turns: Headings, Speaking Rate, Characters, Edit, Headings, Speaking Rate, Characters, Edit, Headings, Speaking Rate, Characters, Edit, Headings, Speaking Rate, Characters, Edit
+then a flick down and a double-tap on the Edit item: readout with the flag: "", without: "123456"
+field with contextMenuHidden, 16 turns: Typing mode, Containers, Words, Misspelt Words, Headings, Speaking Rate, Characters, Typing mode, Containers, Words, Misspelt Words, Headings, Speaking Rate, Characters, Typing mode, Containers
