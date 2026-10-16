@@ -1,5 +1,7 @@
 # `contextMenuHidden` and paste from a keyboard or VoiceOver
 
+[react/react-native#59143](https://github.com/react/react-native/issues/59143)
+
 The reproducer is [`RNTesterPlayground.js`](RNTesterPlayground.js): a field holding `123456`, a field with `contextMenuHidden`, a field without it, and a line that shows what the second and the third field hold.
 
 ## Builds
