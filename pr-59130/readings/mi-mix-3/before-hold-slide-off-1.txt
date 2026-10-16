@@ -1,0 +1,18 @@
+# before a5ec58dc6a09 build, Mi MIX 3, Android 10 (API 29), MIUI 12, long_press_timeout 400, round 1
+# case: press and hold the word "hold", slide off the field, then lift
+== while held at (321, 344)
+text "Playground"
+field "Press and hold a word" focused="true" long-clickable="true"
+text "focused, selection 10-14"
+text "Components"
+text "APIs"
+text "Playground"
+keyboard: mInputShown=false
+== after the lift at (321, 1500)
+text "Playground"
+field "Press and hold a word" focused="true" long-clickable="true"
+text "focused, selection 10-14"
+text "Components"
+text "APIs"
+text "Playground"
+keyboard: mInputShown=false

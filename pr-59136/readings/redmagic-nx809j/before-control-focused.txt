@@ -1,0 +1,8 @@
+# before build 9fbc2bbc5c6d, RedMagic NX809J, Android 16 (API 36)
+# case: the field without contextMenuHidden, focused with its caret at the end, right-clicked at the start
+left click at (1103.1, 593.7) for (1100, 591)
+popup windows: 0
+fields before the right-click: text="Right-click this text" text="Right-click this text too"
+right click at (71.9, 594.4) for (75, 591)
+popup windows: 3
+fields after typing Z: text="Right-click this text" text="ZRight-click this text too"

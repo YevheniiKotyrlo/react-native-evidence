@@ -1,0 +1,4 @@
+# before build 9fbc2bbc5c6d, RedMagic NX809J, Android 16 (API 36), light theme
+# case: right-click the contextMenuHidden field while it is not focused
+right click at (203.7, 396.0) for (200, 400)
+popup windows: 3

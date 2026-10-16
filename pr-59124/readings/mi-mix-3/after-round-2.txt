@@ -1,0 +1,11 @@
+# after, round 2, Mi MIX 3, Android 10 (API 29), MIUI 12
+== focused, before typing
+1 distinct of 10 frames
+== after typing a (caretHidden false)
+1 distinct of 10 frames
+== after the first press (caretHidden true)
+1 distinct of 10 frames
+== after the second press (caretHidden false)
+1 distinct of 10 frames
+== after typing @
+process 10351 before, 10351 after; fatal log lines: 0

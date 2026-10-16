@@ -1,0 +1,18 @@
+# before a5ec58dc6a09 build, Galaxy S23, Android 14 (API 34), long_press_timeout 500
+# case: press and hold the word "hold", slide off the field, then lift
+== while held at (350, 352)
+text "Playground"
+field "Press and hold a word" focused="true" long-clickable="true"
+text "focused, selection 10-14"
+text "Components"
+text "APIs"
+text "Playground"
+keyboard: mInputShown=false
+== after the lift at (350, 1500)
+text "Playground"
+field "Press and hold a word" focused="true" long-clickable="true"
+text "focused, selection 14-14"
+text "Components"
+text "APIs"
+text "Playground"
+keyboard: mInputShown=false
