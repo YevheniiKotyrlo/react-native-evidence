@@ -34,6 +34,8 @@ xcodebuild -workspace RNTesterPods.xcworkspace -scheme RNTester -configuration R
 
 **iPad Pro, iPadOS 27.0.1**, through a WebDriverAgent runner. The Playground is opened from RNTester's Playground tab; Cmd+A and Cmd+C are pressed in the first field, then each other field is tapped and Cmd+V pressed in it, in both orders. The chords go through the runner's `keyboardInput`; a chord sent first after a tap did nothing in either field, so a right-arrow key goes ahead of them. WebDriverAgent reads an empty field as its placeholder, so the line under the fields is what each field holds.
 
+RNTester draws a field's text in black, and its dark theme puts the fields on black, so the pictures of the fields are taken in light appearance; the readings are the same in both.
+
 With VoiceOver and its Caption Panel on, each field is touched, then double-tapped to edit it, and the rotor is turned with the runner's rotate gesture, one call per turn, clockwise and then counter-clockwise, while the screen is recorded. The rotor's label and the Caption Panel, which shows everything VoiceOver says, are read off the recording. In the field without the prop, flicks down on the Edit item step through its actions, and a double-tap runs one.
 
 **Android 16 emulator** (stock, API 36, 1140 × 2400). [`tools/keyboard-paste.sh`](../tools/keyboard-paste.sh) copies the first field with Ctrl+A and Ctrl+C, then pastes with Ctrl+V into each other field:
@@ -58,7 +60,7 @@ The readings are in [`readings/`](readings).
 
 <img src="../images/context-menu-hidden-ipad-cmd-v.png" width="640">
 
-After Cmd+V in the field with `contextMenuHidden`, then in the field without it. RNTester's dark theme draws the fields' text in black; the line under them shows what they hold.
+After Cmd+V in the field with `contextMenuHidden`, then in the field without it.
 
 <img src="../images/context-menu-hidden-ipad-paste-key.png" width="240">
 
@@ -76,4 +78,4 @@ Each caption once, in the order VoiceOver said it; a yellow word is the one bein
 
 <img src="../images/context-menu-hidden-ipad-voiceover-paste.png" width="640">
 
-The field without the prop: the Edit item, its actions a flick down at a time, and the field after a double-tap on paste.
+The field without the prop: the rotor on Edit, a flick down to its paste action, and the field after a double-tap on it.
