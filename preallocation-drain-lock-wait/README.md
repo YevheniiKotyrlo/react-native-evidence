@@ -1,5 +1,7 @@
 # The pre-allocation drain waits for `executeMount` on Android
 
+[react/react-native#59244](https://github.com/react/react-native/issues/59244)
+
 The reproducer is two patches, which apply to `main` at [`202d93931c`](https://github.com/react/react-native/commit/202d93931ca8d2f326d02fa111178a511f5e800f) and at [`b8ec87e457`](https://github.com/react/react-native/commit/b8ec87e457c72377dab85599e1ae8c176eb242e7), before #58890:
 
 - [`rntester-premount-scenes.patch`](rntester-premount-scenes.patch) adds six examples to RNTester's View examples, each 300 or 1200 items of two `View`s: mounted and unmounted in turn every 1.5 s beside a native-driven `Animated.spring` (`premount-burst-300`, `premount-burst-1200`), mounted or unmounted at each fling of a horizontal `ScrollView` (`premount-fling-1200`), and every 1.5 s over 40, 80 or 160 translucent full-window views (`premount-gpu40-1200`, `premount-gpu80-1200`, `premount-gpu160-1200`).
