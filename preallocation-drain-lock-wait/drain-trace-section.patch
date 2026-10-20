@@ -1,0 +1,14 @@
+diff --git a/packages/react-native/ReactAndroid/src/main/java/com/facebook/react/fabric/FabricUIManager.java b/packages/react-native/ReactAndroid/src/main/java/com/facebook/react/fabric/FabricUIManager.java
+index ed0cbd4..f730c1c 100644
+--- a/packages/react-native/ReactAndroid/src/main/java/com/facebook/react/fabric/FabricUIManager.java
++++ b/packages/react-native/ReactAndroid/src/main/java/com/facebook/react/fabric/FabricUIManager.java
+@@ -1715,7 +1715,9 @@ public class FabricUIManager
+       }
+ 
+       if (!ReactNativeFeatureFlags.disableViewPreallocationAndroid() && mBinding != null) {
++        android.os.Trace.beginSection("FabricUIManager::drainPreallocateViewsQueue");
+         mBinding.drainPreallocateViewsQueue();
++        android.os.Trace.endSection();
+       }
+ 
+       try {

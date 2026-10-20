@@ -1,0 +1,194 @@
+diff --git a/packages/rn-tester/js/examples/View/ViewExample.js b/packages/rn-tester/js/examples/View/ViewExample.js
+index d72f0ec..5013d91 100644
+--- a/packages/rn-tester/js/examples/View/ViewExample.js
++++ b/packages/rn-tester/js/examples/View/ViewExample.js
+@@ -16,11 +16,14 @@ import RNTesterText from '../../components/RNTesterText';
+ import * as React from 'react';
+ import {useState} from 'react';
+ import {
++  Animated,
+   Platform,
+   PlatformColor,
+   Pressable,
++  ScrollView,
+   StyleSheet,
+   View,
++  useWindowDimensions,
+ } from 'react-native';
+ 
+ class ViewBorderStyleExample extends React.Component<
+@@ -825,6 +828,132 @@ function FocusBlurExample(): React.Node {
+   );
+ }
+ 
++function PremountBurstSpinner(): React.Node {
++  const rotation = React.useRef(new Animated.Value(0)).current;
++  const spin = React.useRef(
++    rotation.interpolate({inputRange: [0, 2], outputRange: ['0deg', '360deg']}),
++  ).current;
++  React.useEffect(() => {
++    const spring = Animated.spring(rotation, {
++      toValue: 1,
++      stiffness: 10,
++      damping: 0.01,
++      mass: 1,
++      useNativeDriver: true,
++    });
++    spring.start();
++    return () => spring.stop();
++  }, [rotation]);
++  return (
++    <Animated.View
++      style={{
++        width: 48,
++        height: 48,
++        backgroundColor: '#527FE4',
++        transform: [{rotate: spin}],
++      }}
++    />
++  );
++}
++
++function PremountBurstItems({
++  count,
++  mounted,
++}: {
++  count: number,
++  mounted: boolean,
++}): React.Node {
++  return (
++    <View style={{flexDirection: 'row', flexWrap: 'wrap', marginTop: 8}}>
++      {mounted
++        ? Array.from({length: count}, (_, index) => (
++            <View
++              key={index}
++              style={{
++                width: 8,
++                height: 8,
++                margin: 1,
++                backgroundColor: '#e5e7eb',
++              }}>
++              <View style={{width: 4, height: 4, backgroundColor: '#7c3aed'}} />
++            </View>
++          ))
++        : null}
++    </View>
++  );
++}
++
++function PremountBurstBlock({count}: {count: number}): React.Node {
++  const [mounted, setMounted] = useState(false);
++  React.useEffect(() => {
++    const interval = setInterval(() => setMounted(previous => !previous), 1500);
++    return () => clearInterval(interval);
++  }, []);
++  return <PremountBurstItems count={count} mounted={mounted} />;
++}
++
++function PremountBurstExample({count}: {count: number}): React.Node {
++  return (
++    <View testID="premount-burst">
++      <PremountBurstSpinner />
++      <PremountBurstBlock count={count} />
++    </View>
++  );
++}
++
++const PREMOUNT_FLING_COLUMNS = Array.from({length: 400}, (_, index) => (
++  <View
++    key={index}
++    style={{
++      width: 48,
++      height: 96,
++      backgroundColor: index % 2 === 0 ? '#527FE4' : '#7c3aed',
++    }}
++  />
++));
++
++function PremountFlingExample({count}: {count: number}): React.Node {
++  const [mounted, setMounted] = useState(false);
++  return (
++    <View testID="premount-fling">
++      <ScrollView
++        horizontal={true}
++        testID="premount-fling-scroller"
++        style={{height: 96}}
++        onMomentumScrollBegin={() => setMounted(previous => !previous)}>
++        {PREMOUNT_FLING_COLUMNS}
++      </ScrollView>
++      <PremountBurstItems count={count} mounted={mounted} />
++    </View>
++  );
++}
++
++function PremountGpuExample({
++  count,
++  layers,
++}: {
++  count: number,
++  layers: number,
++}): React.Node {
++  const {height} = useWindowDimensions();
++  return (
++    <View testID="premount-gpu" style={{height}}>
++      {Array.from({length: layers}, (_, index) => (
++        <View
++          key={index}
++          pointerEvents="none"
++          style={[
++            StyleSheet.absoluteFill,
++            {backgroundColor: 'rgba(124, 58, 237, 0.02)'},
++          ]}
++        />
++      ))}
++      <PremountBurstSpinner />
++      <PremountBurstBlock count={count} />
++    </View>
++  );
++}
++
+ export default {
+   title: 'View',
+   documentationURL: 'https://reactnative.dev/docs/view',
+@@ -1494,5 +1623,41 @@ export default {
+       name: 'focus-blur',
+       render: FocusBlurExample,
+     },
++    {
++      title: 'Pre-mount burst: 300 items',
++      name: 'premount-burst-300',
++      render: (): React.Node => <PremountBurstExample count={300} />,
++    },
++    {
++      title: 'Pre-mount burst: 1200 items',
++      name: 'premount-burst-1200',
++      render: (): React.Node => <PremountBurstExample count={1200} />,
++    },
++    {
++      title: 'Pre-mount during a fling: 1200 items',
++      name: 'premount-fling-1200',
++      render: (): React.Node => <PremountFlingExample count={1200} />,
++    },
++    {
++      title: 'Pre-mount over 40 translucent layers: 1200 items',
++      name: 'premount-gpu40-1200',
++      render: (): React.Node => (
++        <PremountGpuExample count={1200} layers={40} />
++      ),
++    },
++    {
++      title: 'Pre-mount over 80 translucent layers: 1200 items',
++      name: 'premount-gpu80-1200',
++      render: (): React.Node => (
++        <PremountGpuExample count={1200} layers={80} />
++      ),
++    },
++    {
++      title: 'Pre-mount over 160 translucent layers: 1200 items',
++      name: 'premount-gpu160-1200',
++      render: (): React.Node => (
++        <PremountGpuExample count={1200} layers={160} />
++      ),
++    },
+   ],
+ } as RNTesterModule;
