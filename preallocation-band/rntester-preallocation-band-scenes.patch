@@ -1,0 +1,115 @@
+diff --git a/packages/rn-tester/js/examples/View/ViewExample.js b/packages/rn-tester/js/examples/View/ViewExample.js
+index d72f0ec264..71cba71a1e 100644
+--- a/packages/rn-tester/js/examples/View/ViewExample.js
++++ b/packages/rn-tester/js/examples/View/ViewExample.js
+@@ -16,10 +16,13 @@ import RNTesterText from '../../components/RNTesterText';
+ import * as React from 'react';
+ import {useState} from 'react';
+ import {
++  Animated,
++  Easing,
+   Platform,
+   PlatformColor,
+   Pressable,
+   StyleSheet,
++  Text,
+   View,
+ } from 'react-native';
+ 
+@@ -825,6 +828,80 @@ function FocusBlurExample(): React.Node {
+   );
+ }
+ 
++const PREALLOCATION_ROW_STYLE = {
++  alignItems: 'center',
++  backgroundColor: '#e5e7eb',
++  flexDirection: 'row',
++  height: 32,
++  marginVertical: 1,
++  paddingHorizontal: 8,
++};
++const PREALLOCATION_AVATAR_STYLE = {
++  backgroundColor: '#527FE4',
++  borderRadius: 12,
++  height: 24,
++  marginRight: 8,
++  width: 24,
++};
++const PREALLOCATION_LABEL_STYLE = {flex: 1, fontSize: 13};
++
++function PreallocationBandSpinner(): React.Node {
++  const rotation = React.useRef(new Animated.Value(0)).current;
++  const spin = React.useRef(
++    rotation.interpolate({inputRange: [0, 1], outputRange: ['0deg', '360deg']}),
++  ).current;
++  React.useEffect(() => {
++    const loop = Animated.loop(
++      Animated.timing(rotation, {
++        toValue: 1,
++        duration: 1000,
++        easing: Easing.linear,
++        useNativeDriver: true,
++      }),
++    );
++    loop.start();
++    return () => loop.stop();
++  }, [rotation]);
++  return (
++    <Animated.View
++      style={{
++        backgroundColor: '#527FE4',
++        height: 48,
++        transform: [{rotate: spin}],
++        width: 48,
++      }}
++    />
++  );
++}
++
++function PreallocationBandRow({label}: {label: string}): React.Node {
++  return (
++    <View style={PREALLOCATION_ROW_STYLE}>
++      <View style={PREALLOCATION_AVATAR_STYLE} />
++      <Text style={PREALLOCATION_LABEL_STYLE}>{label}</Text>
++    </View>
++  );
++}
++
++function PreallocationBandExample({rows}: {rows: number}): React.Node {
++  const [band, setBand] = useState(0);
++  React.useEffect(() => {
++    const interval = setInterval(() => setBand(previous => previous + 1), 250);
++    return () => clearInterval(interval);
++  }, []);
++  return (
++    <View testID="preallocation-band">
++      <PreallocationBandSpinner />
++      <View style={{marginTop: 8}}>
++        {Array.from({length: rows}, (_, index) => {
++          const item = band * rows + index;
++          return <PreallocationBandRow key={item} label={`Row ${item}`} />;
++        })}
++      </View>
++    </View>
++  );
++}
++
+ export default {
+   title: 'View',
+   documentationURL: 'https://reactnative.dev/docs/view',
+@@ -1494,5 +1571,15 @@ export default {
+       name: 'focus-blur',
+       render: FocusBlurExample,
+     },
++    {
++      title: 'Pre-allocation band: 12 rows every 250 ms',
++      name: 'preallocation-band-12',
++      render: (): React.Node => <PreallocationBandExample rows={12} />,
++    },
++    {
++      title: 'Pre-allocation band: 48 rows every 250 ms',
++      name: 'preallocation-band-48',
++      render: (): React.Node => <PreallocationBandExample rows={48} />,
++    },
+   ],
+ } as RNTesterModule;
