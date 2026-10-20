@@ -1,5 +1,7 @@
 # Every new view is created inside a frame on Android
 
+[react/react-native#59248](https://github.com/react/react-native/issues/59248)
+
 The reproducer is two patches, which apply to `main` at [`928fd149cb`](https://github.com/react/react-native/commit/928fd149cb939f069b76f7d11ed40db542fe6a64):
 
 - [`rntester-preallocation-band-scenes.patch`](rntester-preallocation-band-scenes.patch) adds two examples to RNTester's View examples. Each replaces a band of rows every 250 ms beside a native-driven rotation, 12 rows in `preallocation-band-12` and 48 in `preallocation-band-48`, and each row is a `View`, a circle and a `Text`.
