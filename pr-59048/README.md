@@ -31,7 +31,7 @@ RNTester release builds for arm64-v8a, each with [`FocusableAudit.js`](Focusable
 
 ```sh
 git switch --detach 6125a5d378   # before and before-imperative
-git fetch origin pull/59048/head && git switch --detach ec5bb84c8b0235455d56277a08a6869579614892   # after, after-props2 and after-imperative
+git fetch origin ec5bb84c8b0235455d56277a08a6869579614892 && git switch --detach FETCH_HEAD   # after, after-props2 and after-imperative
 # packages/rn-tester/js/FocusableAudit.js from this folder, its VARIANT set to the build's name in the readings, and in
 # packages/rn-tester/js/RNTesterApp.android.js:
 #   AppRegistry.registerComponent('RNTesterApp', () => require('./FocusableAudit').default);
