@@ -1,0 +1,60 @@
+## tab-index
+  before            [none] TAB:First TAB:Middle TAB:Last TAB:First SHIFT+TAB:Last SHIFT+TAB:Middle SHIFT+TAB:First SHIFT+TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:Middle DPAD_UP:First DPAD_UP:First
+  after             [none] TAB:First TAB:Last TAB:First TAB:Last SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:First SHIFT+TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:First DPAD_UP:First DPAD_UP:First
+  after-props2      [none] TAB:First TAB:Last TAB:First TAB:Last SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:First SHIFT+TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:First DPAD_UP:First DPAD_UP:First
+  before-imperative [none] TAB:First TAB:Middle TAB:Last TAB:First SHIFT+TAB:Last SHIFT+TAB:Middle SHIFT+TAB:First SHIFT+TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:Middle DPAD_UP:First DPAD_UP:First
+  after-imperative  [none] TAB:First TAB:Last TAB:First TAB:Last SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:First SHIFT+TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:First DPAD_UP:First DPAD_UP:First
+## announced
+  before            [none] TAB:First TAB:Announced TAB:Last TAB:First SHIFT+TAB:Last SHIFT+TAB:Announced SHIFT+TAB:First SHIFT+TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:Announced DPAD_UP:First DPAD_UP:First
+  after             [none] TAB:First TAB:Last TAB:First TAB:Last SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:First SHIFT+TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:First DPAD_UP:First DPAD_UP:First
+  after-props2      [none] TAB:First TAB:Last TAB:First TAB:Last SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:First SHIFT+TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:First DPAD_UP:First DPAD_UP:First
+  before-imperative [none] TAB:First TAB:Announced TAB:Last TAB:First SHIFT+TAB:Last SHIFT+TAB:Announced SHIFT+TAB:First SHIFT+TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:Announced DPAD_UP:First DPAD_UP:First
+  after-imperative  [none] TAB:First TAB:Last TAB:First TAB:Last SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:First SHIFT+TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:First DPAD_UP:First DPAD_UP:First
+## removal
+  before            [none] TAB:First TAB:Target TAB:Last TAB:First tap touch-set-false:none TAB:First TAB:Target TAB:Last TAB:First tap touch-set-unset:none TAB:First TAB:Target TAB:Last TAB:First tap touch-set-true:none TAB:First TAB:Target TAB:Last TAB:First
+  after             [none] TAB:First TAB:Target TAB:Last TAB:First tap touch-set-false:none TAB:First TAB:Last TAB:First TAB:Last tap touch-set-unset:none TAB:First TAB:Target TAB:Last TAB:First tap touch-set-true:none TAB:First TAB:Target TAB:Last TAB:First
+  after-props2      [none] TAB:First TAB:Target TAB:Last TAB:First tap touch-set-false:none TAB:First TAB:Last TAB:First TAB:Last tap touch-set-unset:none TAB:First TAB:Target TAB:Last TAB:First tap touch-set-true:none TAB:First TAB:Target TAB:Last TAB:First
+  before-imperative [none] TAB:First TAB:Target TAB:Last TAB:First tap touch-set-false:none TAB:First TAB:Target TAB:Last TAB:First tap touch-set-unset:none TAB:First TAB:Target TAB:Last TAB:First tap touch-set-true:none TAB:First TAB:Target TAB:Last TAB:First
+  after-imperative  [none] TAB:First TAB:Target TAB:Last TAB:First tap touch-set-false:none TAB:First TAB:Last TAB:First TAB:Last tap touch-set-unset:none TAB:First TAB:Target TAB:Last TAB:First tap touch-set-true:none TAB:First TAB:Target TAB:Last TAB:First
+## ref-focus
+  before            [none] TAB:FocusIt ENTER:FocusIt TAB:Excluded SHIFT+TAB:FocusIt SHIFT+TAB:Last
+  after             [none] TAB:FocusIt ENTER:FocusIt TAB:Last SHIFT+TAB:FocusIt SHIFT+TAB:Last
+  after-props2      [none] TAB:FocusIt ENTER:FocusIt TAB:Last SHIFT+TAB:FocusIt SHIFT+TAB:Last
+  before-imperative [none] TAB:FocusIt ENTER:Excluded TAB:Last SHIFT+TAB:Excluded SHIFT+TAB:FocusIt
+  after-imperative  [none] TAB:FocusIt ENTER:Excluded TAB:Last SHIFT+TAB:FocusIt SHIFT+TAB:Last
+## scroll
+  before            [none] TAB:First TAB:Middle TAB:Last TAB:First SHIFT+TAB:Last SHIFT+TAB:Middle SHIFT+TAB:First SHIFT+TAB:Last
+  after             [none] TAB:First TAB:Last TAB:First TAB:Last SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:First SHIFT+TAB:Last
+  after-props2      [none] TAB:First TAB:Last TAB:First TAB:Last SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:First SHIFT+TAB:Last
+  before-imperative [none] TAB:First TAB:Middle TAB:Last TAB:First SHIFT+TAB:Last SHIFT+TAB:Middle SHIFT+TAB:First SHIFT+TAB:Last
+  after-imperative  [none] TAB:First TAB:Last TAB:First TAB:Last SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:First SHIFT+TAB:Last
+## horizontal
+  before            [none] TAB:First TAB:Middle TAB:Last TAB:First SHIFT+TAB:Last SHIFT+TAB:Middle SHIFT+TAB:First SHIFT+TAB:Last DPAD_RIGHT:Last DPAD_RIGHT:Last DPAD_RIGHT:Last
+  after             [none] TAB:First TAB:Last TAB:First TAB:Last SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:First SHIFT+TAB:Last DPAD_RIGHT:Last DPAD_RIGHT:Last DPAD_RIGHT:Last
+  after-props2      [none] TAB:First TAB:Last TAB:First TAB:Last SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:First SHIFT+TAB:Last DPAD_RIGHT:Last DPAD_RIGHT:Last DPAD_RIGHT:Last
+  before-imperative [none] TAB:First TAB:Middle TAB:Last TAB:First SHIFT+TAB:Last SHIFT+TAB:Middle SHIFT+TAB:First SHIFT+TAB:Last DPAD_RIGHT:Last DPAD_RIGHT:Last DPAD_RIGHT:Last
+  after-imperative  [none] TAB:First TAB:Last TAB:First TAB:Last SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:First SHIFT+TAB:Last DPAD_RIGHT:Last DPAD_RIGHT:Last DPAD_RIGHT:Last
+## clipped
+  before            [none] TAB:Row1 TAB:Row2 TAB:Row3 TAB:Row4 TAB:Row5 TAB:Row6 TAB:Row7 TAB:Row8 TAB:Last TAB:Row7 SHIFT+TAB:Row6 SHIFT+TAB:Row5 SHIFT+TAB:Row4 SHIFT+TAB:Row3 SHIFT+TAB:Row2 SHIFT+TAB:Row1 SHIFT+TAB:Last SHIFT+TAB:Row2 SHIFT+TAB:Row1 SHIFT+TAB:Last
+  after             [none] TAB:Row1 TAB:Row2 TAB:Row6 TAB:Row7 TAB:Row8 TAB:Last TAB:Row7 TAB:Row8 TAB:Last TAB:Row7 SHIFT+TAB:Row6 SHIFT+TAB:Row2 SHIFT+TAB:Row1 SHIFT+TAB:Last SHIFT+TAB:Row2 SHIFT+TAB:Row1 SHIFT+TAB:Last SHIFT+TAB:Row2 SHIFT+TAB:Row1 SHIFT+TAB:Last
+  after-props2      [none] TAB:Row1 TAB:Row2 TAB:Row6 TAB:Row7 TAB:Row8 TAB:Last TAB:Row7 TAB:Row8 TAB:Last TAB:Row7 SHIFT+TAB:Row6 SHIFT+TAB:Row2 SHIFT+TAB:Row1 SHIFT+TAB:Last SHIFT+TAB:Row2 SHIFT+TAB:Row1 SHIFT+TAB:Last SHIFT+TAB:Row2 SHIFT+TAB:Row1 SHIFT+TAB:Last
+  before-imperative [none] TAB:Row1 TAB:Row2 TAB:Row3 TAB:Row4 TAB:Row5 TAB:Row6 TAB:Row7 TAB:Row8 TAB:Last TAB:Row7 SHIFT+TAB:Row6 SHIFT+TAB:Row5 SHIFT+TAB:Row4 SHIFT+TAB:Row3 SHIFT+TAB:Row2 SHIFT+TAB:Row1 SHIFT+TAB:Last SHIFT+TAB:Row2 SHIFT+TAB:Row1 SHIFT+TAB:Last
+  after-imperative  [none] TAB:Row1 TAB:Row2 TAB:Row6 TAB:Row7 TAB:Row8 TAB:Last TAB:Row7 TAB:Row8 TAB:Last TAB:Row7 SHIFT+TAB:Row6 SHIFT+TAB:Row2 SHIFT+TAB:Row1 SHIFT+TAB:Last SHIFT+TAB:Row2 SHIFT+TAB:Row1 SHIFT+TAB:Last SHIFT+TAB:Row2 SHIFT+TAB:Row1 SHIFT+TAB:Last
+## next-focus
+  before            [none] TAB:First DPAD_DOWN:Excluded DPAD_DOWN:Last TAB:First TAB:Excluded
+  after             [none] TAB:First DPAD_DOWN:Last DPAD_DOWN:Last TAB:First TAB:Last
+  after-props2      [none] TAB:First DPAD_DOWN:Last DPAD_DOWN:Last TAB:First TAB:Last
+  before-imperative [none] TAB:First DPAD_DOWN:Excluded DPAD_DOWN:Last TAB:First TAB:Excluded
+  after-imperative  [none] TAB:First DPAD_DOWN:Last DPAD_DOWN:Last TAB:First TAB:Last
+## touchables
+  before            [none] TAB:First TAB:OpacityNoOnPress TAB:Highlight TAB:Last TAB:First TAB:OpacityNoOnPress TAB:Highlight SHIFT+TAB:OpacityNoOnPress SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:Highlight SHIFT+TAB:OpacityNoOnPress SHIFT+TAB:First SHIFT+TAB:Last
+  after             [none] TAB:First TAB:Highlight TAB:Last TAB:First TAB:Highlight TAB:Last TAB:First SHIFT+TAB:Last SHIFT+TAB:Highlight SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:Highlight SHIFT+TAB:First SHIFT+TAB:Last
+  after-props2      [none] TAB:First TAB:Highlight TAB:Last TAB:First TAB:Highlight TAB:Last TAB:First SHIFT+TAB:Last SHIFT+TAB:Highlight SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:Highlight SHIFT+TAB:First SHIFT+TAB:Last
+  before-imperative [none] TAB:First TAB:OpacityNoOnPress TAB:Highlight TAB:Last TAB:First TAB:OpacityNoOnPress TAB:Highlight SHIFT+TAB:OpacityNoOnPress SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:Highlight SHIFT+TAB:OpacityNoOnPress SHIFT+TAB:First SHIFT+TAB:Last
+  after-imperative  [none] TAB:First TAB:Highlight TAB:Last TAB:First TAB:Highlight TAB:Last TAB:First SHIFT+TAB:Last SHIFT+TAB:Highlight SHIFT+TAB:First SHIFT+TAB:Last SHIFT+TAB:Highlight SHIFT+TAB:First SHIFT+TAB:Last
+## container
+  before            [none] TAB:First TAB:Container TAB:Inner1 TAB:Inner2 TAB:Last SHIFT+TAB:Inner2 SHIFT+TAB:Inner1 SHIFT+TAB:Container SHIFT+TAB:First SHIFT+TAB:Last
+  after             [none] TAB:First TAB:Inner1 TAB:Inner2 TAB:Last TAB:First SHIFT+TAB:Last SHIFT+TAB:Inner2 SHIFT+TAB:Inner1 SHIFT+TAB:First SHIFT+TAB:Last
+  after-props2      [none] TAB:First TAB:Inner1 TAB:Inner2 TAB:Last TAB:First SHIFT+TAB:Last SHIFT+TAB:Inner2 SHIFT+TAB:Inner1 SHIFT+TAB:First SHIFT+TAB:Last
+  before-imperative [none] TAB:First TAB:Container TAB:Inner1 TAB:Inner2 TAB:Last SHIFT+TAB:Inner2 SHIFT+TAB:Inner1 SHIFT+TAB:Container SHIFT+TAB:First SHIFT+TAB:Last
+  after-imperative  [none] TAB:First TAB:Inner1 TAB:Inner2 TAB:Last TAB:First SHIFT+TAB:Last SHIFT+TAB:Inner2 SHIFT+TAB:Inner1 SHIFT+TAB:First SHIFT+TAB:Last

@@ -1,0 +1,16 @@
+Galaxy S23 (SM-S911B, Android 14, Samsung TalkBack 14.1.00.6), 1080 x 2340.
+Each line: the gesture, then the bounds of TalkBack's focus highlight and the node of the view tree, read before TalkBack turned on, that it covers.
+
+before touch the first text input: TalkBack's focus [0,391][1080,517] on EditText #keyboard_focus_view_input [0,391][1080,517], overlap 1.00
+before swipe right 1: TalkBack's focus [0,529][1080,679] on ViewGroup #keyboard_focus_view_excluded [0,529][1080,679], overlap 1.00
+before swipe right 2: TalkBack's focus [0,691][1080,841] on ViewGroup #keyboard_focus_view_next [0,691][1080,841], overlap 1.00
+before swipe right 3: TalkBack's focus [18,709][1062,766] on ViewGroup "Focusable: true" [18,709][1062,766], overlap 1.00
+before swipe right 4: TalkBack's focus [18,766][1062,823] on ViewGroup "Focused: false" [18,766][1062,823], overlap 1.00
+before swipe right 5: TalkBack's focus [0,865][1080,991] on EditText #keyboard_focus_scroll_input [0,865][1080,991], overlap 1.00
+
+after touch the first text input: TalkBack's focus [0,391][1080,517] on EditText #keyboard_focus_view_input [0,391][1080,517], overlap 1.00
+after swipe right 1: TalkBack's focus [0,391][1080,517] on EditText #keyboard_focus_view_input [0,391][1080,517], overlap 1.00
+after swipe right 2: TalkBack's focus [0,529][1080,679] on ViewGroup #keyboard_focus_view_excluded [0,529][1080,679], overlap 1.00
+after swipe right 3: TalkBack's focus [0,691][1080,841] on ViewGroup #keyboard_focus_view_next [0,691][1080,841], overlap 1.00
+after swipe right 4: TalkBack's focus [18,709][1062,766] on ViewGroup "Focusable: true" [18,709][1062,766], overlap 1.00
+after swipe right 5: TalkBack's focus [18,766][1062,823] on ViewGroup "Focused: false" [18,766][1062,823], overlap 1.00

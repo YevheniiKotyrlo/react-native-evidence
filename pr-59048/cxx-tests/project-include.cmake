@@ -1,0 +1,2 @@
+set(ANDROID_GTESTS_DIR ${CMAKE_CURRENT_LIST_DIR})
+cmake_language(DEFER DIRECTORY ${CMAKE_SOURCE_DIR} CALL include ${ANDROID_GTESTS_DIR}/android-gtests.cmake)
