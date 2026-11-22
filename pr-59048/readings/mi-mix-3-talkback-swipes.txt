@@ -1,0 +1,42 @@
+Mi MIX 3 (Android 10, TalkBack 17.1.0.1003738110), 1080 x 2340.
+Each line: the gesture, then the bounds of TalkBack's focus highlight and the node of the view tree, read before TalkBack turned on, that it covers. In each of the 2 runs the example is opened again with TalkBack on and the first text input touched first.
+
+run 1
+before touch the first text input: TalkBack's focus [0,382][1080,498] on EditText #keyboard_focus_view_input [0,382][1080,498], overlap 1.00
+before swipe right 1: TalkBack's focus [0,509][1080,646] on ViewGroup #keyboard_focus_view_excluded [0,509][1080,646], overlap 1.00
+before swipe right 2: TalkBack's focus [0,657][1080,795] on ViewGroup #keyboard_focus_view_next [0,657][1080,795], overlap 1.00
+before swipe right 3: TalkBack's focus [16,673][1063,726] on ViewGroup "Focusable: true" [16,673][1063,726], overlap 1.00
+before swipe right 4: TalkBack's focus [16,726][1063,779] on ViewGroup "Focused: false" [16,726][1063,779], overlap 1.00
+before swipe right 5: TalkBack's focus [0,817][1080,933] on EditText #keyboard_focus_scroll_input [0,817][1080,933], overlap 1.00
+before swipe right 6: TalkBack's focus [0,944][1080,1082] on ViewGroup #keyboard_focus_scroll_excluded [0,944][1080,1082], overlap 1.00
+before swipe right 7: TalkBack's focus [0,1092][1080,1229] on ViewGroup #keyboard_focus_scroll_next [0,1092][1080,1229], overlap 1.00
+before swipe right 8: TalkBack's focus [16,1108][1063,1161] on ViewGroup "Focusable: true" [16,1108][1063,1161], overlap 1.00
+after touch the first text input: TalkBack's focus [0,382][1080,498] on EditText #keyboard_focus_view_input [0,382][1080,498], overlap 1.00
+after swipe right 1: TalkBack's focus [0,509][1080,646] on ViewGroup #keyboard_focus_view_excluded [0,509][1080,646], overlap 1.00
+after swipe right 2: TalkBack's focus [0,657][1080,795] on ViewGroup #keyboard_focus_view_next [0,657][1080,795], overlap 1.00
+after swipe right 3: TalkBack's focus [16,673][1063,726] on ViewGroup "Focusable: true" [16,673][1063,726], overlap 1.00
+after swipe right 4: TalkBack's focus [16,726][1063,779] on ViewGroup "Focused: false" [16,726][1063,779], overlap 1.00
+after swipe right 5: TalkBack's focus [0,817][1080,933] on EditText #keyboard_focus_scroll_input [0,817][1080,933], overlap 1.00
+after swipe right 6: TalkBack's focus [0,944][1080,1082] on ViewGroup #keyboard_focus_scroll_excluded [0,944][1080,1082], overlap 1.00
+after swipe right 7: TalkBack's focus [0,1092][1080,1229] on ViewGroup #keyboard_focus_scroll_next [0,1092][1080,1229], overlap 1.00
+after swipe right 8: TalkBack's focus [16,1108][1063,1161] on ViewGroup "Focusable: true" [16,1108][1063,1161], overlap 1.00
+
+run 2
+before touch the first text input: TalkBack's focus [0,382][1080,498] on EditText #keyboard_focus_view_input [0,382][1080,498], overlap 1.00
+before swipe right 1: TalkBack's focus [0,509][1080,646] on ViewGroup #keyboard_focus_view_excluded [0,509][1080,646], overlap 1.00
+before swipe right 2: TalkBack's focus [0,657][1080,795] on ViewGroup #keyboard_focus_view_next [0,657][1080,795], overlap 1.00
+before swipe right 3: TalkBack's focus [16,673][1063,726] on ViewGroup "Focusable: true" [16,673][1063,726], overlap 1.00
+before swipe right 4: TalkBack's focus [16,726][1063,779] on ViewGroup "Focused: false" [16,726][1063,779], overlap 1.00
+before swipe right 5: TalkBack's focus [0,817][1080,933] on EditText #keyboard_focus_scroll_input [0,817][1080,933], overlap 1.00
+before swipe right 6: TalkBack's focus [0,944][1080,1082] on ViewGroup #keyboard_focus_scroll_excluded [0,944][1080,1082], overlap 1.00
+before swipe right 7: TalkBack's focus [0,1092][1080,1229] on ViewGroup #keyboard_focus_scroll_next [0,1092][1080,1229], overlap 1.00
+before swipe right 8: TalkBack's focus [16,1108][1063,1161] on ViewGroup "Focusable: true" [16,1108][1063,1161], overlap 1.00
+after touch the first text input: TalkBack's focus [0,382][1080,498] on EditText #keyboard_focus_view_input [0,382][1080,498], overlap 1.00
+after swipe right 1: TalkBack's focus [0,509][1080,646] on ViewGroup #keyboard_focus_view_excluded [0,509][1080,646], overlap 1.00
+after swipe right 2: TalkBack's focus [0,657][1080,795] on ViewGroup #keyboard_focus_view_next [0,657][1080,795], overlap 1.00
+after swipe right 3: TalkBack's focus [16,673][1063,726] on ViewGroup "Focusable: true" [16,673][1063,726], overlap 1.00
+after swipe right 4: TalkBack's focus [16,726][1063,779] on ViewGroup "Focused: false" [16,726][1063,779], overlap 1.00
+after swipe right 5: TalkBack's focus [0,817][1080,933] on EditText #keyboard_focus_scroll_input [0,817][1080,933], overlap 1.00
+after swipe right 6: TalkBack's focus [0,944][1080,1082] on ViewGroup #keyboard_focus_scroll_excluded [0,944][1080,1082], overlap 1.00
+after swipe right 7: TalkBack's focus [0,1092][1080,1229] on ViewGroup #keyboard_focus_scroll_next [0,1092][1080,1229], overlap 1.00
+after swipe right 8: TalkBack's focus [16,1108][1063,1161] on ViewGroup "Focusable: true" [16,1108][1063,1161], overlap 1.00

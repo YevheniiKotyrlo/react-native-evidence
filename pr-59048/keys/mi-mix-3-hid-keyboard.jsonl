@@ -1,0 +1,8 @@
+{"id":1,"command":"register","name":"Audit walk keyboard","vid":4617,"pid":4,"descriptor":[5,1,9,6,161,1,5,7,25,224,41,231,21,0,37,1,117,1,149,8,129,2,149,1,117,8,129,3,149,6,117,8,21,0,37,101,5,7,25,0,41,101,129,0,192]}
+{"id":1,"command":"report","report":[2,0,0,0,0,0,0,0]}
+{"id":1,"command":"delay","duration":30}
+{"id":1,"command":"report","report":[2,0,43,0,0,0,0,0]}
+{"id":1,"command":"delay","duration":60}
+{"id":1,"command":"report","report":[2,0,0,0,0,0,0,0]}
+{"id":1,"command":"delay","duration":30}
+{"id":1,"command":"report","report":[0,0,0,0,0,0,0,0]}

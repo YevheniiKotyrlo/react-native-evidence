@@ -1,4 +1,4 @@
-Galaxy S23 (SM-S911B, Android 14, Samsung TalkBack 14.1.00.6), 1080 x 2340.
+Galaxy S23 (SM-S911B, Android 14, Samsung TalkBack 14.1.00.6), 1080 x 2340; after is d73328b5b6, one run per build.
 Each line: the gesture, then the bounds of TalkBack's focus highlight and the node of the view tree, read before TalkBack turned on, that it covers.
 
 before touch the first text input: TalkBack's focus [0,391][1080,517] on EditText #keyboard_focus_view_input [0,391][1080,517], overlap 1.00

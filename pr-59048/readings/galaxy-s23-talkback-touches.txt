@@ -1,0 +1,34 @@
+Galaxy S23 (SM-S911B, Android 14, Samsung TalkBack 14.1.00.6), 1080 x 2340.
+Each line: the text touched, then the bounds of TalkBack's focus highlight and the node of the view tree, read before TalkBack turned on, that it covers. In each of the 2 runs the example is opened again with TalkBack on and the first text input touched first.
+
+run 1
+before touch the first text input: TalkBack's focus [0,391][1080,517] on EditText #keyboard_focus_view_input [0,391][1080,517], overlap 1.00
+before touch "Focusable: false, accessible: true" (occurrence 1) at 540,575: TalkBack's focus [0,529][1080,679] on ViewGroup #keyboard_focus_view_excluded [0,529][1080,679], overlap 1.00
+before touch "Focused: false" (occurrence 1) at 540,632: TalkBack's focus [0,529][1080,679] on ViewGroup #keyboard_focus_view_excluded [0,529][1080,679], overlap 1.00
+before touch "Focusable: true" (occurrence 1) at 540,737: TalkBack's focus [0,691][1080,841] on ViewGroup #keyboard_focus_view_next [0,691][1080,841], overlap 1.00
+before touch "Focused: false" (occurrence 2) at 540,794: TalkBack's focus [0,691][1080,841] on ViewGroup #keyboard_focus_view_next [0,691][1080,841], overlap 1.00
+before touch "Focusable: false, accessible: true" (occurrence 2) at 540,1049: TalkBack's focus [0,1003][1080,1153] on ViewGroup #keyboard_focus_scroll_excluded [0,1003][1080,1153], overlap 1.00
+before touch "Focused: false" (occurrence 3) at 540,1106: TalkBack's focus [0,1003][1080,1153] on ViewGroup #keyboard_focus_scroll_excluded [0,1003][1080,1153], overlap 1.00
+after touch the first text input: TalkBack's focus [0,391][1080,517] on EditText #keyboard_focus_view_input [0,391][1080,517], overlap 1.00
+after touch "Focusable: false, accessible: true" (occurrence 1) at 540,575: TalkBack's focus [0,529][1080,679] on ViewGroup #keyboard_focus_view_excluded [0,529][1080,679], overlap 1.00
+after touch "Focused: false" (occurrence 1) at 540,632: TalkBack's focus [0,529][1080,679] on ViewGroup #keyboard_focus_view_excluded [0,529][1080,679], overlap 1.00
+after touch "Focusable: true" (occurrence 1) at 540,737: TalkBack's focus [0,691][1080,841] on ViewGroup #keyboard_focus_view_next [0,691][1080,841], overlap 1.00
+after touch "Focused: false" (occurrence 2) at 540,794: TalkBack's focus [0,691][1080,841] on ViewGroup #keyboard_focus_view_next [0,691][1080,841], overlap 1.00
+after touch "Focusable: false, accessible: true" (occurrence 2) at 540,1049: TalkBack's focus [0,1003][1080,1153] on ViewGroup #keyboard_focus_scroll_excluded [0,1003][1080,1153], overlap 1.00
+after touch "Focused: false" (occurrence 3) at 540,1106: TalkBack's focus [0,1003][1080,1153] on ViewGroup #keyboard_focus_scroll_excluded [0,1003][1080,1153], overlap 1.00
+
+run 2
+before touch the first text input: TalkBack's focus [0,391][1080,517] on EditText #keyboard_focus_view_input [0,391][1080,517], overlap 1.00
+before touch "Focusable: false, accessible: true" (occurrence 1) at 540,575: TalkBack's focus [0,529][1080,679] on ViewGroup #keyboard_focus_view_excluded [0,529][1080,679], overlap 1.00
+before touch "Focused: false" (occurrence 1) at 540,632: TalkBack's focus [0,529][1080,679] on ViewGroup #keyboard_focus_view_excluded [0,529][1080,679], overlap 1.00
+before touch "Focusable: true" (occurrence 1) at 540,737: TalkBack's focus [0,691][1080,841] on ViewGroup #keyboard_focus_view_next [0,691][1080,841], overlap 1.00
+before touch "Focused: false" (occurrence 2) at 540,794: TalkBack's focus [0,691][1080,841] on ViewGroup #keyboard_focus_view_next [0,691][1080,841], overlap 1.00
+before touch "Focusable: false, accessible: true" (occurrence 2) at 540,1049: TalkBack's focus [0,1003][1080,1153] on ViewGroup #keyboard_focus_scroll_excluded [0,1003][1080,1153], overlap 1.00
+before touch "Focused: false" (occurrence 3) at 540,1106: TalkBack's focus [0,1003][1080,1153] on ViewGroup #keyboard_focus_scroll_excluded [0,1003][1080,1153], overlap 1.00
+after touch the first text input: TalkBack's focus [0,391][1080,517] on EditText #keyboard_focus_view_input [0,391][1080,517], overlap 1.00
+after touch "Focusable: false, accessible: true" (occurrence 1) at 540,575: TalkBack's focus [0,529][1080,679] on ViewGroup #keyboard_focus_view_excluded [0,529][1080,679], overlap 1.00
+after touch "Focused: false" (occurrence 1) at 540,632: TalkBack's focus [0,529][1080,679] on ViewGroup #keyboard_focus_view_excluded [0,529][1080,679], overlap 1.00
+after touch "Focusable: true" (occurrence 1) at 540,737: TalkBack's focus [0,691][1080,841] on ViewGroup #keyboard_focus_view_next [0,691][1080,841], overlap 1.00
+after touch "Focused: false" (occurrence 2) at 540,794: TalkBack's focus [0,691][1080,841] on ViewGroup #keyboard_focus_view_next [0,691][1080,841], overlap 1.00
+after touch "Focusable: false, accessible: true" (occurrence 2) at 540,1049: TalkBack's focus [0,1003][1080,1153] on ViewGroup #keyboard_focus_scroll_excluded [0,1003][1080,1153], overlap 1.00
+after touch "Focused: false" (occurrence 3) at 540,1106: TalkBack's focus [0,1003][1080,1153] on ViewGroup #keyboard_focus_scroll_excluded [0,1003][1080,1153], overlap 1.00

@@ -22,16 +22,17 @@ RNTester release builds for arm64-v8a, each with [`FocusableAudit.js`](Focusable
 | Build | Source | Name in the readings |
 | --- | --- | --- |
 | before | `main` at `6125a5d378` | `before` |
-| after | this PR: `ec5bb84c8b` on the RedMagic, `d73328b5b6` on the S23 | `after` |
+| after | this PR: `ec5bb84c8b` on the RedMagic and the Mi MIX 3, `d73328b5b6` on the S23 | `after` |
 | after, with `enablePropsUpdateReconciliationAndroid` | the after build's source with that flag on | `after-props2` |
 | before, with `enableImperativeFocus` | `main` with that flag on | `before-imperative` |
 | after, with `enableImperativeFocus` | the after build's source with that flag on | `after-imperative` |
 
-`d73328b5b6`'s app differs from `ec5bb84c8b` only in how a view finds the `accessibilityOrder` it is in, which neither the scenes nor the keyboard focus exclusion example uses.
+`d73328b5b6`'s app differs from `ec5bb84c8b`'s only in how a view finds the `accessibilityOrder` it is in ([diff](https://github.com/react/react-native/compare/d73328b5b6..ec5bb84c8b)), and neither the scenes nor the keyboard focus exclusion example uses `accessibilityOrder`.
 
 ```sh
 git switch --detach 6125a5d378   # before and before-imperative
 git fetch origin ec5bb84c8b0235455d56277a08a6869579614892 && git switch --detach FETCH_HEAD   # after, after-props2 and after-imperative
+git fetch origin d73328b5b6775773fe924efd51d609f055f59ec6 && git switch --detach FETCH_HEAD   # the same three on the S23
 # packages/rn-tester/js/FocusableAudit.js from this folder, its VARIANT set to the build's name in the readings, and in
 # packages/rn-tester/js/RNTesterApp.android.js:
 #   AppRegistry.registerComponent('RNTesterApp', () => require('./FocusableAudit').default);
@@ -48,11 +49,11 @@ git fetch origin ec5bb84c8b0235455d56277a08a6869579614892 && git switch --detach
 
 ## Steps
 
-Each build is installed and opened, and each scene is picked with a tap on its button. Then the scene's keys are pressed one at a time — `adb shell input keyevent KEYCODE_TAB`, `KEYCODE_DPAD_DOWN`, `KEYCODE_DPAD_UP`, `KEYCODE_DPAD_RIGHT` or `KEYCODE_ENTER`, and Shift+Tab as `adb shell input keycombination KEYCODE_SHIFT_LEFT KEYCODE_TAB` — and after each press `adb shell uiautomator dump` names the view it marks `focused="true"` by its `accessibilityLabel`.
+Each build is installed and opened, and each scene is picked with a tap on its button. Then the scene's keys are pressed one at a time — `adb shell input keyevent KEYCODE_TAB`, `KEYCODE_DPAD_DOWN`, `KEYCODE_DPAD_UP`, `KEYCODE_DPAD_RIGHT` or `KEYCODE_ENTER`, and Shift+Tab as `adb shell input keycombination KEYCODE_SHIFT_LEFT KEYCODE_TAB` — and after each press `adb shell uiautomator dump` names the view it marks `focused="true"` by its `accessibilityLabel`. The Mi MIX 3's Android 10 has no `keycombination`, so there Shift+Tab goes through a HID keyboard, registered before the first build is installed and kept for the whole walk, since a keyboard attached between presses restarts RNTester's activity. [`keys/mi-mix-3-hid-keyboard.jsonl`](keys/mi-mix-3-hid-keyboard.jsonl) holds the keyboard's lines: the first registers it, and the others press and release Shift and Tab. `adb shell 'rm -f /data/local/tmp/keyboard.jsonl && touch /data/local/tmp/keyboard.jsonl'` starts a file on the phone empty, and `adb shell 'tail -n +1 -f /data/local/tmp/keyboard.jsonl | hid -'` runs for the whole walk and feeds `hid` from it. The first line is appended to that file once, as `sed -n 1p keys/mi-mix-3-hid-keyboard.jsonl | adb shell 'cat >> /data/local/tmp/keyboard.jsonl'` does, and the others at each Shift+Tab, as the same command with `sed -n '2,$p'` does.
 
 ## Readings
 
-Galaxy S23 (Android 14) and RedMagic NX809J (Android 16): the two phones read the same at every step, and the build with `enablePropsUpdateReconciliationAndroid` reads as the after build at every step.
+Mi MIX 3 (Android 10), Galaxy S23 (Android 14) and RedMagic NX809J (Android 16): the three phones read the same at every step, and the build with `enablePropsUpdateReconciliationAndroid` reads as the after build at every step.
 
 | Scene | before | after |
 | --- | --- | --- |
@@ -69,25 +70,28 @@ Galaxy S23 (Android 14) and RedMagic NX809J (Android 16): the two phones read th
 
 Each build passes over the disabled `TouchableOpacity` and `Pressable`, and apart from the views this table names, each moves through the same views in the same order. D-pad Down in `tab-index` and `announced`, and D-pad Right in `horizontal`, start from `Last`, which has nothing below or beside it, so they read the same in every build.
 
-With `enableImperativeFocus` on, both phones read as with the flag off in every scene but `ref-focus`, where Enter on `FocusIt` calls `Excluded`'s `ref.focus()`:
+With `enableImperativeFocus` on, the three phones read as with the flag off in every scene but `ref-focus`, where Enter on `FocusIt` calls `Excluded`'s `ref.focus()`:
 
 | `ref-focus`, `enableImperativeFocus` on | before | after |
 | --- | --- | --- |
 | Enter on `FocusIt` | focuses `Excluded` | focuses `Excluded` |
 | then Tab, then Shift+Tab | `Last`, then back to `Excluded` | `Last`, then past `Excluded` to `FocusIt` |
 
-Each step, per phone: [`readings/galaxy-s23-keys.txt`](readings/galaxy-s23-keys.txt) and [`readings/redmagic-nx809j-keys.txt`](readings/redmagic-nx809j-keys.txt), a line per build, each entry the key and the view that has focus after it. `[none]` is the screen before the first key, and `tap touch-set-false:none` is a tap on the `set-false` button, after which no view has focus.
+Each step, per phone: [`readings/mi-mix-3-keys.txt`](readings/mi-mix-3-keys.txt), [`readings/galaxy-s23-keys.txt`](readings/galaxy-s23-keys.txt) and [`readings/redmagic-nx809j-keys.txt`](readings/redmagic-nx809j-keys.txt), a line per build, each entry the key and the view that has focus after it. `[none]` is the screen before the first key, and `tap touch-set-false:none` is a tap on the `set-false` button, after which no view has focus.
 
 ## TalkBack
 
-RNTester release builds for arm64-v8a with the keyboard focus exclusion example: before is `main` at `6125a5d378` with this PR's `FocusEventsExample.android.js`, after is this PR: `ec5bb84c8b` on the RedMagic, `d73328b5b6` on the S23. The example opens with `adb shell am start -a android.intent.action.VIEW -d rntester://example/FocusEventsExample/keyboard-focus-exclusion <the build's application id>`, and its view tree is read, and a screenshot taken, while TalkBack is off. Then TalkBack is turned on with `adb shell settings put secure enabled_accessibility_services <TalkBack's service>` and `adb shell settings put secure accessibility_enabled 1`, the service being `com.google.android.marvin.talkback/.TalkBackService` on the RedMagic and `com.samsung.android.accessibility.talkback/com.samsung.android.marvin.talkback.TalkBackService` on the S23. Each gesture is a file of [`talkback/`](talkback) played with `adb shell uinput - < <file>`, since TalkBack's touch exploration ignores `adb shell input`: on the S23 a held touch on the first text input, then swipes right; on the RedMagic a held touch on the first text input, then on both texts of the view's accessible `focusable={false}` row, of its `focusable` row and of the scroll view's accessible `focusable={false}` row, each file named by the point it touches. After each gesture a screenshot is taken, and TalkBack's focus is the box around the pixels of its focus rectangle, green on the RedMagic and blue on the S23, that the screenshot with TalkBack off does not have. The readings name the node of the view tree whose bounds overlap that box most, as intersection over union.
+RNTester release builds for arm64-v8a with the keyboard focus exclusion example: before is `main` at `6125a5d378` with this PR's `FocusEventsExample.android.js`, after is this PR at `ec5bb84c8b`. The example opens with `adb shell am start -a android.intent.action.VIEW -d rntester://example/FocusEventsExample/keyboard-focus-exclusion <the build's application id>`, and its view tree is read, and a screenshot taken, while TalkBack is off. Then TalkBack is turned on with `adb shell settings put secure enabled_accessibility_services <TalkBack's service>` and `adb shell settings put secure accessibility_enabled 1`, the service being `com.google.android.marvin.talkback/.TalkBackService` on the RedMagic and the Mi MIX 3 and `com.samsung.android.accessibility.talkback/com.samsung.android.marvin.talkback.TalkBackService` on the S23. TalkBack's touch exploration ignores `adb shell input`, so each gesture is a file of [`talkback/`](talkback) that registers a touchscreen and plays its touches, with `adb shell uinput - < <file>`, or on the Mi MIX 3, whose Android 10 has no `uinput` command, with `adb shell hid - < <file>`: on each phone a held touch on the first text input, then on both texts of the view's accessible `focusable={false}` row, of its `focusable` row and of the scroll view's accessible `focusable={false}` row, each file named by the phone and the point it touches; on the S23 and the Mi MIX 3 also a held touch on the first text input, then eight swipes right. On the RedMagic, TalkBack took none of the swipes a `uinput` touchscreen gave, and its `hid` command registered no touchscreen, so its readings are touches alone. After each gesture a screenshot is taken, and TalkBack's focus is the box around the pixels of its focus rectangle, green in Google's TalkBack and blue in Samsung's, that the screenshot with TalkBack off does not have. The readings name the node of the view tree whose bounds overlap that box most, as intersection over union.
 
 | With TalkBack on | before | after |
 | --- | --- | --- |
-| RedMagic NX809J, TalkBack 17.1: touch either text of the accessible `focusable={false}` row, in the view and in the scroll view | the whole row on 8 of 8 touches | the whole row on 8 of 8 touches |
-| Galaxy S23, Samsung TalkBack 14.1: swipe right from the first text input | the accessible `focusable={false}` row, whole; then the `focusable` row; then that row's two texts one by one | the same, one swipe later: the first swipe left TalkBack's focus on the text input |
+| RedMagic NX809J (Android 16), TalkBack 17.1: touch either text of the accessible `focusable={false}` row, in the view and in the scroll view | the whole row on 8 of 8 touches | the whole row on 8 of 8 touches |
+| Mi MIX 3 (Android 10), TalkBack 17.1: the same touches | the whole row on 8 of 8 touches | the whole row on 8 of 8 touches |
+| Galaxy S23 (Android 14), Samsung TalkBack 14.1: the same touches | the whole row on 8 of 8 touches | the whole row on 8 of 8 touches |
+| Each phone: touch either text of the view's `focusable` row | the whole row on 4 of 4 touches | the whole row on 4 of 4 touches |
+| Mi MIX 3, TalkBack 17.1, and Galaxy S23, Samsung TalkBack 14.1: swipe right eight times from the first text input | the accessible `focusable={false}` row, whole; then the `focusable` row; then that row's two texts one by one; then the scroll view's text input, its accessible `focusable={false}` row, whole, its `focusable` row and that row's first text | the same |
 
-The RedMagic's touches come from two runs. On the S23 each build was walked once, so why the after walk's first swipe left TalkBack's focus on the text input is unverified. Each gesture: [`readings/galaxy-s23-talkback.txt`](readings/galaxy-s23-talkback.txt) and [`readings/redmagic-nx809j-talkback.txt`](readings/redmagic-nx809j-talkback.txt).
+Each phone's touches come from two runs, each touching both texts of each row once, and the swipes on the Mi MIX 3 and the S23 from two runs each. The `focusable` row is there for contrast: a touch focuses it whole too, but the swipes then visit its two texts one by one, which they never do for an accessible `focusable={false}` row. An earlier run on the S23 at `d73328b5b6`, one run per build and five swipes long ([readings](readings/galaxy-s23-talkback-swipes-d73328b5b6.txt)), left TalkBack's focus on the text input at the after build's first swipe, and its later swipes reached the same stops one swipe behind; neither run at `ec5bb84c8b` repeats that. Each gesture: [`readings/redmagic-nx809j-talkback-touches.txt`](readings/redmagic-nx809j-talkback-touches.txt), [`readings/mi-mix-3-talkback-touches.txt`](readings/mi-mix-3-talkback-touches.txt), [`readings/galaxy-s23-talkback-touches.txt`](readings/galaxy-s23-talkback-touches.txt) and, for the swipes, [`readings/mi-mix-3-talkback-swipes.txt`](readings/mi-mix-3-talkback-swipes.txt) and [`readings/galaxy-s23-talkback-swipes.txt`](readings/galaxy-s23-talkback-swipes.txt).
 
 | before | after |
 | --- | --- |
