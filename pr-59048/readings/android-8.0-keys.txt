@@ -1,0 +1,60 @@
+## tab-index
+  before            [none] TAB:First TAB:Middle TAB:Last TAB:First DPAD_DOWN:Middle DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:Middle DPAD_UP:First DPAD_UP:First
+  after             [none] TAB:First TAB:Last TAB:First TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:First DPAD_UP:First DPAD_UP:First
+  after-props2      [none] TAB:First TAB:Last TAB:First TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:First DPAD_UP:First DPAD_UP:First
+  before-imperative [none] TAB:First TAB:Middle TAB:Last TAB:First DPAD_DOWN:Middle DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:Middle DPAD_UP:First DPAD_UP:First
+  after-imperative  [none] TAB:First TAB:Last TAB:First TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:First DPAD_UP:First DPAD_UP:First
+## announced
+  before            [none] TAB:First TAB:Announced TAB:Last TAB:First DPAD_DOWN:Announced DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:Announced DPAD_UP:First DPAD_UP:First
+  after             [none] TAB:First TAB:Last TAB:First TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:First DPAD_UP:First DPAD_UP:First
+  after-props2      [none] TAB:First TAB:Last TAB:First TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:First DPAD_UP:First DPAD_UP:First
+  before-imperative [none] TAB:First TAB:Announced TAB:Last TAB:First DPAD_DOWN:Announced DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:Announced DPAD_UP:First DPAD_UP:First
+  after-imperative  [none] TAB:First TAB:Last TAB:First TAB:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_DOWN:Last DPAD_UP:First DPAD_UP:First DPAD_UP:First
+## removal
+  before            [none] TAB:First TAB:Target TAB:Last TAB:First tap touch-set-false:none TAB:First TAB:Target TAB:Last TAB:First tap touch-set-unset:none TAB:First TAB:Target TAB:Last TAB:First tap touch-set-true:none TAB:First TAB:Target TAB:Last TAB:First
+  after             [none] TAB:First TAB:Target TAB:Last TAB:First tap touch-set-false:none TAB:First TAB:Last TAB:First TAB:Last tap touch-set-unset:none TAB:First TAB:Target TAB:Last TAB:First tap touch-set-true:none TAB:First TAB:Target TAB:Last TAB:First
+  after-props2      [none] TAB:First TAB:Target TAB:Last TAB:First tap touch-set-false:none TAB:First TAB:Last TAB:First TAB:Last tap touch-set-unset:none TAB:First TAB:Target TAB:Last TAB:First tap touch-set-true:none TAB:First TAB:Target TAB:Last TAB:First
+  before-imperative [none] TAB:First TAB:Target TAB:Last TAB:First tap touch-set-false:none TAB:First TAB:Target TAB:Last TAB:First tap touch-set-unset:none TAB:First TAB:Target TAB:Last TAB:First tap touch-set-true:none TAB:First TAB:Target TAB:Last TAB:First
+  after-imperative  [none] TAB:First TAB:Target TAB:Last TAB:First tap touch-set-false:none TAB:First TAB:Last TAB:First TAB:Last tap touch-set-unset:none TAB:First TAB:Target TAB:Last TAB:First tap touch-set-true:none TAB:First TAB:Target TAB:Last TAB:First
+## ref-focus
+  before            [none] TAB:FocusIt ENTER:FocusIt TAB:Excluded
+  after             [none] TAB:FocusIt ENTER:FocusIt TAB:Last
+  after-props2      [none] TAB:FocusIt ENTER:FocusIt TAB:Last
+  before-imperative [none] TAB:FocusIt ENTER:Excluded TAB:Last
+  after-imperative  [none] TAB:FocusIt ENTER:Excluded TAB:Last
+## scroll
+  before            [none] TAB:First TAB:Middle TAB:Last TAB:First
+  after             [none] TAB:First TAB:Last TAB:First TAB:Last
+  after-props2      [none] TAB:First TAB:Last TAB:First TAB:Last
+  before-imperative [none] TAB:First TAB:Middle TAB:Last TAB:First
+  after-imperative  [none] TAB:First TAB:Last TAB:First TAB:Last
+## horizontal
+  before            [none] TAB:First TAB:Middle TAB:Last TAB:First DPAD_RIGHT:Middle DPAD_RIGHT:Middle DPAD_RIGHT:Middle
+  after             [none] TAB:First TAB:Last TAB:First TAB:Last DPAD_RIGHT:Last DPAD_RIGHT:Last DPAD_RIGHT:Last
+  after-props2      [none] TAB:First TAB:Last TAB:First TAB:Last DPAD_RIGHT:Last DPAD_RIGHT:Last DPAD_RIGHT:Last
+  before-imperative [none] TAB:First TAB:Middle TAB:Last TAB:First DPAD_RIGHT:Middle DPAD_RIGHT:Middle DPAD_RIGHT:Middle
+  after-imperative  [none] TAB:First TAB:Last TAB:First TAB:Last DPAD_RIGHT:Last DPAD_RIGHT:Last DPAD_RIGHT:Last
+## clipped
+  before            [none] TAB:Row1 TAB:Row2 TAB:Row3 TAB:Row4 TAB:Row5 TAB:Row6 TAB:Row7 TAB:Row8 TAB:Last TAB:Row7
+  after             [none] TAB:Row1 TAB:Row2 TAB:Row6 TAB:Row7 TAB:Row8 TAB:Last TAB:Row7 TAB:Row8 TAB:Last TAB:Row7
+  after-props2      [none] TAB:Row1 TAB:Row2 TAB:Row6 TAB:Row7 TAB:Row8 TAB:Last TAB:Row7 TAB:Row8 TAB:Last TAB:Row7
+  before-imperative [none] TAB:Row1 TAB:Row2 TAB:Row3 TAB:Row4 TAB:Row5 TAB:Row6 TAB:Row7 TAB:Row8 TAB:Last TAB:Row7
+  after-imperative  [none] TAB:Row1 TAB:Row2 TAB:Row6 TAB:Row7 TAB:Row8 TAB:Last TAB:Row7 TAB:Row8 TAB:Last TAB:Row7
+## next-focus
+  before            [none] TAB:First DPAD_DOWN:Excluded DPAD_DOWN:Last TAB:First TAB:Excluded
+  after             [none] TAB:First DPAD_DOWN:Last DPAD_DOWN:Last TAB:First TAB:Last
+  after-props2      [none] TAB:First DPAD_DOWN:Last DPAD_DOWN:Last TAB:First TAB:Last
+  before-imperative [none] TAB:First DPAD_DOWN:Excluded DPAD_DOWN:Last TAB:First TAB:Excluded
+  after-imperative  [none] TAB:First DPAD_DOWN:Last DPAD_DOWN:Last TAB:First TAB:Last
+## touchables
+  before            [none] TAB:First TAB:OpacityDisabled TAB:OpacityNoOnPress TAB:Highlight TAB:PressableDisabled TAB:Last TAB:First
+  after             [none] TAB:First TAB:Highlight TAB:PressableDisabled TAB:Last TAB:First TAB:Highlight TAB:PressableDisabled
+  after-props2      [none] TAB:First TAB:Highlight TAB:PressableDisabled TAB:Last TAB:First TAB:Highlight TAB:PressableDisabled
+  before-imperative [none] TAB:First TAB:OpacityDisabled TAB:OpacityNoOnPress TAB:Highlight TAB:PressableDisabled TAB:Last TAB:First
+  after-imperative  [none] TAB:First TAB:Highlight TAB:PressableDisabled TAB:Last TAB:First TAB:Highlight TAB:PressableDisabled
+## container
+  before            [none] TAB:First TAB:Container TAB:Inner1 TAB:Inner2 TAB:Last
+  after             [none] TAB:First TAB:Inner1 TAB:Inner2 TAB:Last TAB:First
+  after-props2      [none] TAB:First TAB:Inner1 TAB:Inner2 TAB:Last TAB:First
+  before-imperative [none] TAB:First TAB:Container TAB:Inner1 TAB:Inner2 TAB:Last
+  after-imperative  [none] TAB:First TAB:Inner1 TAB:Inner2 TAB:Last TAB:First
